@@ -76,7 +76,7 @@ export default function AdminDashboard() {
       const headers = { Authorization: `Bearer ${token}` };
 
       // Fetch stats
-      const statsRes = await fetch('http://localhost:5000/api/admin/stats', { headers });
+      const statsRes = await fetch('https://decohaven-mr5s.onrender.com/api/admin/stats', { headers });
       if (statsRes.ok) {
         const statsData = await statsRes.json();
         setStats([
@@ -88,28 +88,28 @@ export default function AdminDashboard() {
       }
 
       // Fetch orders
-      const ordersRes = await fetch('http://localhost:5000/api/admin/orders', { headers });
+      const ordersRes = await fetch('https://decohaven-mr5s.onrender.com/api/admin/orders', { headers });
       if (ordersRes.ok) {
         const ordersData = await ordersRes.json();
         setOrders(ordersData);
       }
 
       // Fetch products
-      const productsRes = await fetch('http://localhost:5000/api/admin/products', { headers });
+      const productsRes = await fetch('https://decohaven-mr5s.onrender.comapi/admin/products', { headers });
       if (productsRes.ok) {
         const productsData = await productsRes.json();
         setProducts(productsData);
       }
 
       // Fetch users
-      const usersRes = await fetch('http://localhost:5000/api/admin/users', { headers });
+      const usersRes = await fetch('https://decohaven-mr5s.onrender.com/api/admin/users', { headers });
       if (usersRes.ok) {
         const usersData = await usersRes.json();
         setUsers(usersData);
       }
 
       // Fetch notifications
-      const notificationsRes = await fetch('http://localhost:5000/api/admin/notifications', { headers });
+      const notificationsRes = await fetch('https://decohaven-mr5s.onrender.com/api/admin/notifications', { headers });
       if (notificationsRes.ok) {
         const notificationsData = await notificationsRes.json();
         setNotifications(notificationsData);
@@ -125,7 +125,7 @@ export default function AdminDashboard() {
   const updateOrderStatus = async (orderId, newStatus) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/admin/orders/${orderId}/status`, {
+      const response = await fetch(`https://decohaven-mr5s.onrender.com/api/admin/orders/${orderId}/status`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -147,7 +147,7 @@ export default function AdminDashboard() {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/admin/products/${productId}`, {
+      const response = await fetch(`https://decohaven-mr5s.onrender.com/api/admin/products/${productId}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` }
       });
@@ -189,8 +189,8 @@ export default function AdminDashboard() {
     try {
       const token = localStorage.getItem('token');
       const url = editingProduct
-        ? `http://localhost:5000/api/admin/products/${editingProduct._id}`
-        : 'http://localhost:5000/api/admin/products';
+        ? `https://decohaven-mr5s.onrender.com/api/admin/products/${editingProduct._id}`
+        : 'https://decohaven-mr5s.onrender.com/api/admin/products';
       const method = editingProduct ? 'PUT' : 'POST';
 
       const response = await fetch(url, {
@@ -223,7 +223,7 @@ export default function AdminDashboard() {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/auth/profile', {
+      const response = await fetch('https://decohaven-mr5s.onrender.com/api/auth/profile', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -360,7 +360,7 @@ export default function AdminDashboard() {
                             onClick={async () => {
                               try {
                                 const token = localStorage.getItem('token');
-                                await fetch(`http://localhost:5000/api/admin/notifications/${notification.id}/view`, {
+                                await fetch(`https://decohaven-mr5s.onrender.com/api/admin/notifications/${notification.id}/view`, {
                                   method: 'PUT',
                                   headers: { Authorization: `Bearer ${token}` }
                                 });
@@ -573,7 +573,7 @@ export default function AdminDashboard() {
                             onClick={async () => {
                               try {
                                 const token = localStorage.getItem('token');
-                                const response = await fetch(`http://localhost:5000/api/orders/admin/${order._id}`, {
+                                const response = await fetch(`https://decohaven-mr5s.onrender.com/api/orders/admin/${order._id}`, {
                                   headers: { Authorization: `Bearer ${token}` }
                                 });
                                 if (response.ok) {
@@ -970,3 +970,4 @@ export default function AdminDashboard() {
     </div>
   );
 }
+
