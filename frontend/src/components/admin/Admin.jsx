@@ -95,7 +95,7 @@ export default function AdminDashboard() {
       }
 
       // Fetch products
-      const productsRes = await fetch('https://decohaven-mr5s.onrender.comapi/admin/products', { headers });
+      const productsRes = await fetch('https://decohaven-mr5s.onrender.com/api/admin/products', { headers });
       if (productsRes.ok) {
         const productsData = await productsRes.json();
         setProducts(productsData);
@@ -970,4 +970,5 @@ export default function AdminDashboard() {
     </div>
   );
 }
+
 
