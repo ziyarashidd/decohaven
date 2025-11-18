@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'https://decohaven-mr5s.onrender.com/api';
 
 // Helper function to get auth token
 const getAuthToken = () => {
@@ -90,3 +90,4 @@ export const ordersAPI = {
   getUserOrders: () => apiCall('/orders'),
   getById: (id) => apiCall(`/orders/${id}`),
 };
+
