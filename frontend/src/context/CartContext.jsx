@@ -97,7 +97,7 @@ export const CartProvider = ({ children }) => {
     }
 
     // Otherwise, it's a login request
-    const response = await fetch('http://localhost:5000/api/auth/login', {
+    const response = await fetch('https://decohaven-mr5s.onrender.com/api/auth/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -117,7 +117,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const register = async (userData) => {
-    const response = await fetch('http://localhost:5000/api/auth/register', {
+    const response = await fetch('https://decohaven-mr5s.onrender.com/api/auth/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -166,3 +166,4 @@ export const CartProvider = ({ children }) => {
     </CartContext.Provider>
   );
 };
+
