@@ -23,7 +23,7 @@ function AppContent() {
     const token = localStorage.getItem('token');
     if (token) {
       // Verify token and restore user session
-      fetch('http://localhost:5000/api/auth/verify', {
+      fetch('https://decohaven-mr5s.onrender.com/api/auth/verify', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -42,7 +42,7 @@ function AppContent() {
     }
 
     // Fetch products from backend
-    fetch('http://localhost:5000/api/products')
+    fetch('https://decohaven-mr5s.onrender.com/api/products')
       .then(response => response.json())
       .then(data => {
         setProducts(data);
