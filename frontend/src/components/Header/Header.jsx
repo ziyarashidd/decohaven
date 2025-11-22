@@ -87,6 +87,7 @@ export default function Header() {
           <Link to="/shop" className="hover:text-yellow-600" onClick={() => setMenuOpen(false)}>Shop</Link>
           <Link to="/about" className="hover:text-yellow-600" onClick={() => setMenuOpen(false)}>About</Link>
           <Link to="/contact" className="hover:text-yellow-600" onClick={() => setMenuOpen(false)}>Contact</Link>
+          <Link to="/myorders" className="hover:text-yellow-600" onClick={() => setMenuOpen(false)}>My Orders</Link>
         </nav>
       )}
 
@@ -267,3 +268,4 @@ export default function Header() {
     </header>
   );
 }
+
